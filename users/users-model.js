@@ -2,12 +2,23 @@ const db = require("../data/db-config.js");
 
 
 module.exports = {
+    add,
     getAll,
+    findBy,
     findById,
     remove,
     updateUser
 }
 
+function add(user) {
+    return db("users")
+        .insert(user)
+}
+
+function findBy(username) {
+    return db("users")
+        .where(username)
+}
 
 function getAll() {
     return db('users')

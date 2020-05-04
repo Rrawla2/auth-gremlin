@@ -6,7 +6,7 @@ const admin_id = 30;
 
 router.get("/", (req,res) => {
     Users.getAll().then(users =>
-    res.status(201).json(users))
+    res.status(200).json(users))
 })
 
 router.get("/me", restricted, (req,res) => {
